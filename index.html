@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Visualisation - Traffic Dashboard</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="header-content">
+          <h1>Data Visualisation - Traffic Dashboard</h1>
+          <p class="subtitle">
+            How do traffic conditions, environmental factors, driver experience, and temporal context
+            influence driver stress across Vienna districts?
+          </p>
+          <p class="subtitle-note">
+            Original RQ: <em>"What temporal and spatial patterns characterize urban traffic congestion,
+            and which factors most strongly correlate with congestion intensity?"</em>
+            — reframed to driver stress. Vienna district assignment and hourly/daily patterns
+            are synthetically assigned to the dataset records to enable spatial &amp; temporal analysis.
+          </p>
+        </div>
+        <div id="filter-badge" class="filter-badge hidden">
+          <span id="filter-label">Showing: All boroughs</span>
+          <button id="reset-btn">Reset</button>
+        </div>
+      </header>
+
+      <div id="loading" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading 50,000 records…</p>
+      </div>
+
+      <main class="dashboard-grid">
+        <section class="chart-card chart-map">
+          <h2>Spatial: Average Stress by District</h2>
+          <p class="chart-hint">Click a borough to filter all views</p>
+          <div id="chart-choropleth" class="chart-container"></div>
+        </section>
+
+        <section class="chart-card">
+          <h2>Temporal: Stress by Hour &amp; Day</h2>
+          <p class="chart-hint">Binning — 168 aggregated cells (7 days × 24 h)</p>
+          <div id="chart-heatmap" class="chart-container"></div>
+        </section>
+
+        <section class="chart-card">
+          <h2>Relationship: Traffic Density vs Stress</h2>
+          <p class="chart-hint">Sampling — 2,000 representative points shown</p>
+          <div id="chart-scatter" class="chart-container"></div>
+        </section>
+
+        <section class="chart-card">
+          <h2>Comparison: Experience Level vs Average Stress</h2>
+          <p class="chart-hint">Grouped by time of day — model-based abstraction (means)</p>
+          <div id="chart-bar" class="chart-container"></div>
+        </section>
+
+        <section class="chart-card">
+          <h2>Drivers of Stress: Variable Correlations</h2>
+          <p class="chart-hint">Orange increases stress · blue reduces · + stress variance explained by weather</p>
+          <div id="chart-boxplot" class="chart-container"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
