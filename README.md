@@ -16,7 +16,7 @@ An interactive data visualization dashboard exploring the factors that influence
 
 ## Dataset
 
-The underlying data is the [Smart City Traffic Stress Index Dataset](https://www.kaggle.com/datasets/sonalshinde123/smart-city-traffic-stress-index-dataset) from Kaggle - 50,000 records with the following columns:
+The underlying data is the [Smart City Traffic Stress Index Dataset](https://www.kaggle.com/datasets/sonalshinde123/smart-city-traffic-stress-index-dataset) from Kaggle - 50,000 records included in this repository at `public/data/smart_city_traffic_stress_dataset.csv`. The dataset has the following columns:
 
 | Column | Description |
 |--------|-------------|
